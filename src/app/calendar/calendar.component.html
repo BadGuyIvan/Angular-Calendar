@@ -1,0 +1,18 @@
+<div class="container_calendar">
+  <div class="container_header_calendar">
+    <button (click)="prevMonth()">
+      <</button> {{ current_active_month | date: "MMMM yyyy" }} <button (click)="nextMonth()">>
+    </button>
+  </div>
+  <div class="container_day_week">
+    <div *ngFor="let day of arry_month[0]; trackBy: trackDay" class="day">
+      {{ day | date: "E" }}
+    </div>
+  </div>
+  <div *ngFor="let item of arry_month; trackBy: trackDay" class="container_day_week" (click)="actived_day($event)">
+    <div *ngFor="let day of item; trackBy: trackDay" class="day"
+      [ngClass]="{'hide': current_active_month.getMonth() !== day.getMonth(), 'active': today.getDate() === day.getDate() && today.getMonth() === day.getMonth() }">
+      {{ day | date: "d" }}
+    </div>
+  </div>
+</div>

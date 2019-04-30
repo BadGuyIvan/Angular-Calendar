@@ -1,0 +1,26 @@
+.container_calendar {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  .container_header_calendar {
+    display: flex;
+    justify-content: space-between;
+  }
+  .container_day_week {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    .day {
+      padding: 5px;
+      display: flex;
+      flex: 1;
+      justify-content: center;
+    }
+    .hide {
+      color: #c3c3c3
+    }
+    .active {
+      font-weight: 600;
+    }
+  }
+}
